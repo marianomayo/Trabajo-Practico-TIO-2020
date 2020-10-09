@@ -1,0 +1,73 @@
+h1{
+    text-decoration: underline;
+}
+.base{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 10px;
+    background-color: white;
+    color: black;
+}
+.botonMenu{
+    color: black;
+    padding: 15px;
+}
+
+.botonMenu a{
+    color: black;
+    text-decoration: none;
+}
+.volteoMenu{
+    border-bottom: 4px solid black;
+    width: 100%;
+    display: flex;
+    background-color: white; 
+}
+ul.voltear{    
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: none;
+    flex-direction: column;    
+}
+ul.voltear.mostrarMenuCompleto {
+    display: flex;
+}
+ul.voltear li {
+    list-style: none;
+    margin: 0px 0px;
+    padding: 15px 20px;
+}
+ul.voltear li a {
+    font-size: large;
+    text-decoration: none;
+    color: black;
+}
+
+.center{
+    text-align: center;
+}
+
+
+
+@media only screen and (min-width: 600px) {
+    .botonMenu {
+        display: none;
+    }
+     ul.voltear {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-around;
+    }
+    .base{
+        display: flex;
+        justify-content: center;
+    }
+    .volteoMenu{
+        border-bottom: 2px solid black;
+    }
+  
+    
+   
+}
