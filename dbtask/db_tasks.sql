@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-10-2020 a las 22:56:57
+-- Tiempo de generación: 10-10-2020 a las 18:07:39
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.9
 
@@ -41,6 +41,26 @@ CREATE TABLE `task` (
 INSERT INTO `task` (`id`, `title`, `description`, `completed`) VALUES
 (15, 'Tarea1', 'la tarea hace X cosa', 0);
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`) VALUES
+(1, 'javito@javito.com', '$2y$10$7IjoPSLcBXXVhAEIhL.lCeFZgVZ0/FrEuMMUoT8rxQtLj.MXrhqfy'),
+(2, 'admin@admin.com', '$2y$10$jh/vAOAheKalsvA8bBh3TuwUZZvHBOxEZYZHg6K1QVJEZ4jcJ9sFW');
+
 --
 -- Índices para tablas volcadas
 --
@@ -52,6 +72,12 @@ ALTER TABLE `task`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -60,6 +86,12 @@ ALTER TABLE `task`
 --
 ALTER TABLE `task`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT de la tabla `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
