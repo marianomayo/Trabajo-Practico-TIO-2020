@@ -2,6 +2,7 @@
 
 
 <div class="container">
+    <h1>Task app</h1>
 
     {if $message != ""}
         <div class="alert alert-danger" role="alert">
