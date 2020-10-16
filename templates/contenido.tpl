@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-
+{include file="navegador.tpl"}
 <div class="container">
 
           <ul class="list-group">
