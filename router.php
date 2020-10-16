@@ -12,13 +12,11 @@
 
     // rutas
     $r->addRoute("home", "GET", "TasksController", "Home");
-
+    $r->addRoute("tareas", "GET", "TasksController", "tareas");
     //Esto lo veo en TasksView
     $r->addRoute("insert", "POST", "TasksController", "InsertTask");
-
     $r->addRoute("delete/:ID", "GET", "TasksController", "DeleteTask");
     $r->addRoute("completar/:ID", "GET", "TasksController", "MarkAsCompletedTask");
-
 
     //### LOGIN
     $r->addRoute("login", "GET", "UserController", "Login");

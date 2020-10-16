@@ -15,9 +15,12 @@ class TasksController{
     }
 
 
-    function Home(){
+    function tareas(){
         $tasks = $this->model->GetTasks();
-        $this->view->ShowHome($tasks);
+        $this->view->ShowTareas($tasks);
+    }
+    function Home(){
+        $this->view->ShowHome();
     }
 
     function InsertTask(){
