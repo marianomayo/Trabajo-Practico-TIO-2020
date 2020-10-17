@@ -1,9 +1,9 @@
 {include file="header.tpl"}
 {include file="navegador.tpl"}
 
-<div>
+<div class="text-center">
    
-    
+    <img src="./img/logopagina.jpg" alt="logopagina">
     
   </div>
 

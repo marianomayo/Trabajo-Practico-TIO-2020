@@ -1,7 +1,7 @@
     <header>
 
         <div class="base">
-            <h1 class="center">titulo de pagina</h1>
+            <h1 class="center display-2">Trabajo Tio</h1>
             <div class="botonMenu"><a>Menu</a></div>
         </div>
         <div class="volteoMenu">
