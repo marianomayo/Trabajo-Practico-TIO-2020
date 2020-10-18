@@ -1,11 +1,10 @@
     
-    <section>
-
-    </section>
-    
-    <footer>
-       
+<div class="card-header">
+  </div>
+    <footer class="text-center">
+        <h4>copyright</h4>
     </footer>
+      
     
                 <!-- Optional JavaScript -->
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
