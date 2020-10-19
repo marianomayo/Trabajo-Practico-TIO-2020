@@ -12,8 +12,8 @@ class UserView{
     }
 
     function ShowLogin($message = ""){
-
         $smarty = new Smarty();
+        $smarty->assign('isLogin', true);
         $smarty->assign('titulo_s', $this->title);
         $smarty->assign('message', $message);
 
