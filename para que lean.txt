@@ -1,0 +1,2 @@
+importar la base de datos para que funcione la pagina .
+Si es necesario utilicen este texto para hacer modificaciones.
