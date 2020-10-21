@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 
-
+<h2 class="text-center">Logueate!</h2>
 <div class="container-login">
 
 <div class="form-login">
