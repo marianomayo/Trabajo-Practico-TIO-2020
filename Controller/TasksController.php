@@ -3,25 +3,14 @@
 require_once "./View/TasksView.php";
 require_once "./Model/TasksModel.php";
 
-class TasksController{
-
-    private $view;
-    private $model;
-
-    function __construct(){
-        $this->view = new TasksView();
-        $this->model = new TasksModel();
-
-    }
-
+class TasksController extends Controller{
 
     function tareas(){
-        $tasks = $this->model->GetTasks();
-        $this->view->ShowTareas($tasks);
+        $tasks = $this->taskModel->GetTasks();
+        $this->taskView->ShowTareas($tasks);
+        parent::__construct();         
     }
-    function Home(){
-        $this->view->ShowHome();
-    }
+    
 
     function InsertTask(){
 
@@ -30,38 +19,38 @@ class TasksController{
             $completed = 1;
         }
 
-        $this->model->InsertTask($_POST['input_title'],$_POST['input_description'],$completed,$_POST['input_priority']);
-        $this->view->ShowHomeLocation();
+        $this->taskModel->InsertTask($_POST['input_title'],$_POST['input_description'],$completed,$_POST['input_priority']);
+        $this->taskView->ShowHomeLocation();
     }
 
     function DeleteTask($params = null){
         $task_id = $params[':ID'];
-        $this->model->DeleteTask($task_id);
-        $this->view->ShowHomeLocation();
+        $this->taskModel->DeleteTask($task_id);
+        $this->taskView->ShowHomeLocation();
     }
 
     function MarkAsCompletedTask($params = null){
         $task_id = $params[':ID'];
-        $this->model->MarkAsCompletedTask($task_id);
-        $this->view->ShowHomeLocation();
+        $this->taskModel->MarkAsCompletedTask($task_id);
+        $this->taskView->ShowHomeLocation();
     }
 
 
     function AutoCompletar(){
-        $tasks = $this->model->GetTasks();
+        $tasks = $this->taskModel->GetTasks();
 
         foreach($tasks as $task){
             $title = $task->title;
             $word = "Completada";
 
             if(strpos($title, $word) !== false){
-                $this->model->MarkAsCompletedTask($task->id);
+                $this->taskModel->MarkAsCompletedTask($task->id);
             }
         }
 
-       $tasks = $this->model->GetTasks();
+       $tasks = $this->taskModel->GetTasks();
        
-       $this->view->ShowHome($tasks);
+       $this->taskView->ShowHome($tasks);
     }
 }
 

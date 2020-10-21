@@ -1,26 +1,18 @@
 <?php
+require_once "./View/View.php";
 
-require_once "./libs/smarty/Smarty.class.php";
+class UserView extends View{
 
-class UserView{
-
-    private $title;
     
-
     function __construct(){
-        $this->title = "Login";
+        parent::__construct();
     }
-
+    
     function ShowLogin($message = ""){
-        $smarty = new Smarty();
-        $smarty->assign('isLogin', true);
-        $smarty->assign('titulo_s', $this->title);
-        $smarty->assign('message', $message);
+        $this->smarty->assign('message', $message);
 
-        $smarty->display('templates/login.tpl'); // muestro el template 
+        $this->smarty->display('templates/login.tpl');
     }
-
 }
-
 
 ?>

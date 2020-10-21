@@ -1,26 +1,25 @@
 <?php
+require_once "./View/View.php";
+class TasksView extends View{
 
-class TasksView{
-
-    private $title;
+    protected $title;
 
     function __construct(){
         $this->title = "Lista de Tareas";
+        parent::__construct();
     }
 
 
     function showHome(){
-        $smarty = new Smarty();
-        $smarty->display('templates/home.tpl');
+        $this->smarty->display('../templates/home.tpl');
     }
 
 
     function ShowTareas($tasks){
-        $smarty = new Smarty();
-        $smarty->assign('titulo_s', $this->title);
-        $smarty->assign('tareas_s', $tasks);
+        $this->smarty->assign('titulo_s', $this->title);
+        $this->smarty->assign('tareas_s', $tasks);
       
-        $smarty->display('templates/contenido.tpl'); // muestro el template 
+        $this->smarty->display('templates/contenido.tpl'); // muestro el template 
     }
 
 

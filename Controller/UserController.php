@@ -3,21 +3,10 @@
 require_once "./View/UserView.php";
 require_once "./Model/UserModel.php";
 
-class UserController{
-
-    private $view;
-    private $model;
-
-    function __construct(){
-        $this->view = new UserView();
-        $this->model = new UserModel();
-
-    }
+class UserController extends Controller{
 
     function Login(){
-
-        $this->view->ShowLogin();
-
+        $this->userView->ShowLogin();
     }
 
 
@@ -26,7 +15,7 @@ class UserController{
         $pass = $_POST["input_pass"];
 
         if(isset($user)){
-            $userFromDB = $this->model->GetUser($user);
+            $userFromDB = $this->userModel->GetUser($user);
 
             if(isset($userFromDB) && $userFromDB){
                 // Existe el usuario
@@ -39,12 +28,12 @@ class UserController{
 
                     header("Location: ".BASE_URL."home");
                 }else{
-                    $this->view->ShowLogin("Contraseña incorrecta");
+                    $this->userView->ShowLogin("Contraseña incorrecta");
                 }
 
             }else{
                 // No existe el user en la DB
-                $this->view->ShowLogin("El usuario no existe");
+                $this->userView->ShowLogin("El usuario no existe");
             }
         }
     }

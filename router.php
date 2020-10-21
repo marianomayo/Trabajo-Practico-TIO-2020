@@ -1,4 +1,8 @@
 <?php
+    require_once 'Model/Model.php';
+    require_once 'View/View.php';
+    require_once 'Controller/Controller.php';
+
     require_once 'Controller/TasksController.php';
     require_once 'Controller/UserController.php';
     require_once 'RouterClass.php';
