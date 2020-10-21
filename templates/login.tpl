@@ -12,7 +12,7 @@
         <h1>Task app</h1>
         <form action="verifyUser" method="post">
                         <div class="form-group">
-                            <label for="user">Ususario</label>
+                            <label for="user">Usuario</label>
                             <input class="form-control" id="user" name="input_user" aria-describedby="emailHelp">
                     
                         </div>
